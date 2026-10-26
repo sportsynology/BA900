@@ -55,6 +55,8 @@ td{font-weight:400}
 .track::-webkit-scrollbar{display:none}
 .slide{flex:0 0 100%;scroll-snap-align:center;aspect-ratio:4/5;background:var(--panel);display:grid;place-items:center;color:var(--mute);text-align:center}
 .slide img{width:100%;height:100%;object-fit:cover}
+.slide.report{background:#fff}
+.slide.report img{object-fit:contain;cursor:zoom-in}
 .sbtn{position:absolute;top:50%;translate:0 -50%;width:42px;height:42px;border-radius:50%;border:1px solid #ffffff44;background:#070919cc;color:var(--ink);font-size:1.2rem;cursor:pointer}
 .sbtn.prev{left:12px}.sbtn.next{right:12px}
 .dots{display:flex;justify-content:center;gap:8px;margin-top:14px}
@@ -144,7 +146,7 @@ dialog img{max-height:90vh;margin:auto;border-radius:12px}
         <div class="track" id="track">
           <!-- ใส่รูปแทนช่องว่าง: <div class="slide"><img referrerpolicy="no-referrer" src="ลิงก์รูป" alt="คำอธิบาย"></div> -->
           <div class="slide"><img referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/d/19XoF2eKz_XWEi_8OeuqDG38AypTiNx0T=w2000" alt="ค่าที่วัดได้ รูปที่ 1"></div>
-          <div class="slide"><img referrerpolicy="no-referrer" src="report-full.jpg" alt="ค่าที่วัดได้ รูปที่ 2"></div>
+          <div class="slide report"><img src="report-web.jpg" data-hd="report-hd.jpg" alt="ตัวอย่างรายงานผลการวัดจากเครื่อง BA900S" loading="lazy"></div>
         </div>
         <button class="sbtn prev" aria-label="รูปก่อนหน้า">‹</button>
         <button class="sbtn next" aria-label="รูปถัดไป">›</button>
@@ -206,6 +208,7 @@ pics.forEach(([id,a]) => {
   document.getElementById("boxes").appendChild(b);
 });
 lb.onclick = () => lb.close();
+document.querySelectorAll("[data-hd]").forEach(i => i.onclick = () => { lbi.removeAttribute("referrerpolicy"); lbi.src = i.dataset.hd; lbi.alt = i.alt; lb.showModal(); });
 
 /* สไลด์ */
 const track = document.getElementById("track"), n = track.children.length, dots = document.getElementById("dots");
