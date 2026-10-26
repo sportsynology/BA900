@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BA900S เครื่องวัดองค์ประกอบร่างกายอัจฉริยะ | Sport Synology</title>
-<meta name="description" content="คู่มือสินค้า BA900S วัดส่วนสูง น้ำหนัก BMI ไขมัน มวลกล้ามเนื้อ และชีพจร ในเครื่องเดียว">
+<title>BA900S Intelligent Body Analyzer | Sport Synology</title>
+<meta name="description" content="คู่มือสินค้า BA900S Intelligent Body Analyzer เครื่องวัดองค์ประกอบร่างกายอัจฉริยะ จาก Sport Synology">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#070919;--ink:#eef0ff;--mute:#9aa1cc;--line:#20254d;--cy:#2fd3e6;--vi:#6a63ff;--panel:#0e1130;color-scheme:dark}
+:root{--bg:#070919;--ink:#eef0ff;--mute:#9aa1cc;--line:#20254d;--cy:#2fd3e6;--panel:#0e1130;color-scheme:dark}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:"Prompt",system-ui,sans-serif;font-weight:300;line-height:1.75;font-size:17px;overflow-x:hidden}
@@ -17,154 +17,94 @@ img{max-width:100%;display:block}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--cy);outline-offset:3px}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-h1,h2,h3{font-weight:600;line-height:1.15}
-h2{font-size:clamp(2rem,5vw,3.4rem);margin-bottom:14px}
+h1,h2{font-weight:600;line-height:1.15}
+h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:12px}
 .lead{color:var(--mute);max-width:52ch}
+section{padding:96px 0}
 
-header{position:fixed;inset:0 0 auto;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:18px 28px;mix-blend-mode:difference}
-header a{text-decoration:none;font-weight:500;letter-spacing:.04em}
-header .go{border:1px solid currentColor;padding:6px 18px;border-radius:99px;font-size:.92rem}
+/* 1 hero */
+.hero{min-height:100svh;padding:0;position:relative;display:flex;align-items:center;overflow:hidden;background:radial-gradient(55% 60% at 75% 55%,#1b1f6a 0%,transparent 70%)}
+.hero .logo{position:absolute;top:22px;right:28px;height:46px;width:auto;z-index:2}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:24px;width:100%}
+.hero h1{font-size:clamp(3.6rem,12vw,8.5rem);font-weight:700;letter-spacing:-.03em;line-height:1}
+.hero p{font-size:clamp(1.1rem,2.6vw,1.8rem);color:var(--cy);font-weight:400;margin-top:8px}
+.hero .prod{display:flex;justify-content:center}
+.hero .prod img{height:88svh;max-height:920px;width:auto;object-fit:contain;filter:drop-shadow(0 0 60px #2fd3e644);animation:rise 1.2s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:none}}
 
-/* hero */
-.hero{min-height:100svh;position:relative;display:grid;place-items:center;text-align:center;overflow:hidden;background:radial-gradient(60% 50% at 50% 55%,#1b1f6a 0%,transparent 70%)}
-.hero h1{position:absolute;top:14vh;left:0;right:0;font-size:clamp(5rem,24vw,19rem);font-weight:700;letter-spacing:-.03em;color:#ffffff12;-webkit-text-stroke:1px #3a40a0;line-height:1}
-.hero img{position:relative;height:84svh;max-height:900px;width:auto;filter:drop-shadow(0 0 60px #2fd3e655);animation:rise 1.4s cubic-bezier(.2,.8,.2,1) both}
-@keyframes rise{from{opacity:0;transform:translateY(60px) scale(.96)}to{opacity:1;transform:none}}
-.hero p{position:absolute;bottom:28px;left:0;right:0;color:var(--mute);font-size:.95rem}
-.hero .name{position:absolute;left:6vw;bottom:14vh;text-align:left;max-width:300px}
-.hero .name b{display:block;font-size:1.4rem;font-weight:500}
+/* 2 spec */
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:32px;align-items:start}
+table{width:100%;border-collapse:collapse}
+th,td{text-align:left;padding:15px 4px;border-bottom:1px solid var(--line);font-weight:300;vertical-align:top}
+th{color:var(--mute);width:36%}
+td{font-weight:400}
+.boxes{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.boxes button{padding:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);cursor:zoom-in}
+.boxes img{width:100%;aspect-ratio:1;object-fit:cover;transition:transform .4s}
+.boxes button:hover img{transform:scale(1.05)}
 
-/* intro */
-.intro{padding:120px 0 40px}
-.intro .big{font-size:clamp(1.5rem,3.6vw,2.4rem);font-weight:300;max-width:26ch;line-height:1.4}
-.intro .big em{font-style:normal;color:var(--cy)}
-
-/* scroll story */
-.story{position:relative}
-.stage{position:sticky;top:0;height:100svh;display:grid;place-items:center;overflow:hidden;pointer-events:none}
-.stage .glow{position:absolute;width:60vmin;height:60vmin;border-radius:50%;background:radial-gradient(circle,#4a3df066,transparent 65%);transition:transform 1s,background 1s}
-.stage img{position:absolute;max-height:78svh;width:auto;opacity:0;transform:scale(.9);transition:opacity .8s,transform 1.1s cubic-bezier(.2,.8,.2,1)}
-.stage img.on{opacity:1;transform:none}
-.stage img.full{right:12vw}
-.stage img.head{right:6vw;max-width:50vw}
-.stage img.screen{right:16vw}
-.stage .num{position:absolute;right:6vw;bottom:8vh;font-size:clamp(3rem,10vw,8rem);font-weight:700;color:var(--cy);opacity:0;transition:opacity .8s;line-height:1}
-.stage .num.on{opacity:1}
-.chapters{margin-top:-100svh;position:relative;z-index:2}
-.chap{min-height:100svh;display:flex;align-items:center}
-.chap div{max-width:400px;background:linear-gradient(90deg,var(--bg) 60%,transparent);padding:30px 40px 30px 0}
-.chap h3{font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:12px}
-.chap p{color:var(--mute)}
-.chap small{display:block;color:var(--cy);margin-bottom:10px;letter-spacing:.08em}
-
-/* metrics */
-.metrics{padding:120px 0}
-.mgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:40px}
-.mgrid div{background:var(--bg);padding:30px 22px;transition:background .3s}
-.mgrid div:hover{background:var(--panel)}
-.mgrid b{display:block;font-size:1.25rem;font-weight:500}
-.mgrid span{color:var(--mute);font-size:.9rem}
-.note{margin-top:24px;color:var(--mute)}
-
-/* video */
-.video{padding:40px 0 120px}
-.vbox{aspect-ratio:16/9;margin-top:32px;background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:grid;place-items:center;text-align:center;color:var(--mute)}
+/* 3 video */
+.vbox{aspect-ratio:16/9;margin-top:28px;background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:grid;place-items:center;text-align:center;color:var(--mute)}
 .vbox iframe{width:100%;height:100%;border:0}
 .vbox p{padding:24px;max-width:42ch}.vbox strong{display:block;color:var(--ink);font-size:1.3rem;font-weight:500}
 
-/* spec */
-.spec{padding:40px 0 120px}
-.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:36px;align-items:center}
-table{width:100%;border-collapse:collapse}
-th,td{text-align:left;padding:16px 4px;border-bottom:1px solid var(--line);font-weight:300}
-th{color:var(--mute);width:38%}
-td{font-weight:400}
-.sgrid img{border-radius:16px;cursor:zoom-in;border:1px solid var(--line)}
+/* 4 metrics */
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:32px;align-items:center}
+.slider{position:relative}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:18px;border:1px solid var(--line)}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:center;aspect-ratio:4/5;background:var(--panel);display:grid;place-items:center;color:var(--mute);text-align:center}
+.slide img{width:100%;height:100%;object-fit:cover}
+.sbtn{position:absolute;top:50%;translate:0 -50%;width:42px;height:42px;border-radius:50%;border:1px solid #ffffff44;background:#070919cc;color:var(--ink);font-size:1.2rem;cursor:pointer}
+.sbtn.prev{left:12px}.sbtn.next{right:12px}
+.dots{display:flex;justify-content:center;gap:8px;margin-top:14px}
+.dots i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.dots i.on{background:var(--cy)}
+.mlist{list-style:none;padding:0}
+.mlist li{position:relative;padding:14px 0 14px 28px;border-bottom:1px solid var(--line);color:var(--mute)}
+.mlist li::before{content:"";position:absolute;left:4px;top:25px;width:9px;height:9px;border-radius:50%;background:var(--cy)}
 
-/* gallery */
-.gal{padding:0 0 120px}
-.ggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-top:32px}
-.ggrid button{padding:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);cursor:zoom-in}
-.ggrid img{aspect-ratio:1;object-fit:cover;width:100%;transition:transform .4s}
-.ggrid button:hover img{transform:scale(1.05)}
+/* 5 contact */
+.contact{background:var(--panel);border-top:1px solid var(--line);padding:72px 0}
+.contact h3{font-size:1.5rem;font-weight:600;margin-bottom:10px}
+.contact p{color:var(--mute);max-width:56ch}
+.contact .tel{display:inline-block;margin-top:18px;font-size:1.5rem;font-weight:500;color:var(--cy);text-decoration:none}
 
-footer{border-top:1px solid var(--line);padding:40px 0;color:var(--mute);font-size:.92rem}
-footer b{color:var(--ink);font-weight:500}
 dialog{border:0;background:transparent;max-width:min(94vw,820px);padding:0}
 dialog::backdrop{background:#000e}
 dialog img{max-height:90vh;margin:auto;border-radius:12px}
 
 @media (max-width:760px){
-  .hero .name{display:none}
-  .stage{align-items:start;padding-top:70px}
-  .stage img{max-height:44svh;right:auto!important;left:50%;margin-left:-0px;transform:translateX(-50%) scale(.9)}
-  .stage img.on{transform:translateX(-50%)}
-  .stage img.head{max-width:90vw}
-  .stage .num{bottom:auto;top:62px;right:6vw;font-size:3rem}
-  .chap{align-items:flex-end;padding-bottom:6vh}
-  .chap div{background:linear-gradient(0deg,var(--bg) 70%,transparent);padding:50px 0 10px;max-width:none}
-  .mgrid{grid-template-columns:repeat(2,1fr)}
-  .sgrid{grid-template-columns:1fr}
+  section{padding:64px 0}
+  .hero{align-items:flex-start;padding-top:84px}
+  .hero .wrap{grid-template-columns:1fr;gap:0}
+  .hero .logo{height:36px;right:18px;top:18px}
+  .hero .prod img{height:56svh}
+  .sgrid,.mgrid{grid-template-columns:1fr;gap:32px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-<header><a href="#top">SPORT SYNOLOGY</a><a class="go" href="#video">ดูคลิป</a></header>
 
-<main id="top">
-  <section class="hero">
-    <h1>BA900S</h1>
-    <div class="name"><b>Intelligent Body Analyzer</b>เครื่องวัดองค์ประกอบร่างกายอัจฉริยะ</div>
-    <img src="https://drive.google.com/thumbnail?id=1-8wHeCM4sWXeS8a3r9DQVJz2ib4WyDWJ&sz=w2000" alt="เครื่องวัดองค์ประกอบร่างกาย BA900S">
-    <p>เลื่อนลงเพื่อดูรายละเอียด</p>
-  </section>
-
-  <section class="intro"><div class="wrap">
-    <p class="big">วัดส่วนสูง น้ำหนัก ไขมัน และชีพจร <em>ในเครื่องเดียว</em> อ่านผลทั้งหมดบนจอสัมผัส 19 นิ้ว</p>
-  </div></section>
-
-  <section class="story" aria-label="จุดเด่นของเครื่อง">
-    <div class="stage" aria-hidden="true">
-      <div class="glow"></div>
-      <img class="full on" src="assets/images/cut/full.png" alt="">
-      <img class="head" src="assets/images/cut/head.png" alt="">
-      <img class="screen" src="assets/images/cut/screen.png" alt="">
-      <div class="num">200<small style="font-size:.35em"> kg</small></div>
+<!-- 1. Hero Banner -->
+<section class="hero" id="top">
+  <img class="logo" referrerpolicy="no-referrer" src="https://drive.google.com/thumbnail?id=1kqB6ajN12dPILtZeWLI6Nm6_ec3Q9oQW&sz=w2000" alt="โลโก้ Sport Synology">
+  <div class="wrap">
+    <div>
+      <h1>BA900S</h1>
+      <p>Intelligent Body Analyzer</p>
     </div>
-    <div class="chapters wrap">
-      <div class="chap" data-show="head"><div>
-        <small>วัดส่วนสูง</small><h3>Ultrasonic Sensor</h3>
-        <p>หัววัดด้านบนส่งคลื่นเสียงความถี่สูงลงมายังศีรษะ วัดส่วนสูงโดยไม่ต้องสัมผัสตัว ไฟ LED สีฟ้าด้านข้างบอกสถานะการทำงาน</p></div></div>
-      <div class="chap" data-show="screen"><div>
-        <small>แสดงผล</small><h3>จอ IPS HD 19 นิ้ว</h3>
-        <p>หน้าจอสัมผัสคมชัด เมนูภาษาไทย แตะเพื่อเริ่มวัดและอ่านค่าทั้งหมดได้ในหน้าเดียว มือจับสองข้างมีแถบวัดชีพจรในตัว</p></div></div>
-      <div class="chap" data-show="full" data-num="1"><div>
-        <small>ฐานชั่ง</small><h3>รับน้ำหนักได้สูงสุด 200 kg</h3>
-        <p>ฐานชั่งแข็งแรง มีแผ่นเซนเซอร์ 4 จุด รองรับผู้ใช้งานได้หลากหลายรูปร่าง</p></div></div>
+    <div class="prod">
+      <img referrerpolicy="no-referrer" src="https://drive.google.com/thumbnail?id=1-8wHeCM4sWXeS8a3r9DQVJz2ib4WyDWJ&sz=w2000" alt="เครื่องวัดองค์ประกอบร่างกาย BA900S">
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="metrics"><div class="wrap">
-    <h2>ค่าที่วัดได้</h2>
-    <p class="lead">ยืนบนเครื่องและจับมือจับ ได้ผลครบทุกรายการ</p>
-    <div class="mgrid">
-      <div><b>ส่วนสูง</b><span>Ultrasonic</span></div><div><b>น้ำหนัก</b><span>Weight</span></div>
-      <div><b>BMI</b><span>ดัชนีมวลกาย</span></div><div><b>ไขมัน</b><span>Body Fat</span></div>
-      <div><b>เผาผลาญ</b><span>Metabolism</span></div><div><b>กล้ามเนื้อ</b><span>Muscle Mass</span></div>
-      <div><b>อายุร่างกาย</b><span>เทียบกับอายุจริง</span></div><div><b>รูปร่าง</b><span>Body Type</span></div>
-    </div>
-    <p class="note">และวัดชีพจรได้จากแถบสัมผัสที่มือจับสองข้างของหน้าจอ</p>
-  </div></section>
-
-  <section class="video" id="video"><div class="wrap">
-    <h2>คลิปแนะนำการใช้งาน</h2>
-    <p class="lead">ดูวิธีใช้เครื่องตั้งแต่ขึ้นยืนวัดจนอ่านผล</p>
-    <div class="vbox" id="videoBox"></div>
-  </div></section>
-
-  <section class="spec"><div class="wrap">
-    <h2>ข้อมูลจำเพาะ</h2>
+<!-- 2. ข้อมูลจำเพาะสินค้า -->
+<section id="spec">
+  <div class="wrap">
+    <h2>ข้อมูลจำเพาะสินค้า</h2>
     <div class="sgrid">
       <table>
         <tr><th>รุ่น</th><td>BA900S Intelligent Body Analyzer</td></tr>
@@ -175,21 +115,60 @@ dialog img{max-height:90vh;margin:auto;border-radius:12px}
         <tr><th>วัดชีพจร</th><td>แถบสัมผัสที่มือจับ</td></tr>
         <tr><th>รับประกัน</th><td>ตัวเครื่อง 1 ปีเต็ม พร้อมบริการหลังการขาย</td></tr>
       </table>
-      <img src="assets/images/size.jpg" alt="ขนาดสินค้า สูง 240 กว้าง 43 ลึก 61 เซนติเมตร" data-zoom>
+      <div class="boxes" id="boxes"></div>
     </div>
-  </div></section>
+  </div>
+</section>
 
-  <section class="gal"><div class="wrap">
-    <h2>รูปภาพสินค้า</h2>
-    <div class="ggrid" id="grid"></div>
-  </div></section>
-</main>
+<!-- 3. คลิปแนะนำการใช้งาน -->
+<section id="video" style="background:var(--panel)">
+  <div class="wrap">
+    <h2>คลิปแนะนำการใช้งาน</h2>
+    <p class="lead">ดูวิธีใช้เครื่องตั้งแต่ขึ้นยืนวัดจนอ่านผล</p>
+    <div class="vbox" id="videoBox"></div>
+  </div>
+</section>
 
-<footer><div class="wrap"><b>Sport Synology</b> Exercise Equipment<br>สอบถามสินค้าและบริการหลังการขาย: <!-- ใส่เบอร์โทร / LINE / อีเมลที่นี่ -->ติดต่อทีมงาน Sport Synology</div></footer>
+<!-- 4. ข้อมูลค่าที่วัดได้ -->
+<section id="metrics">
+  <div class="wrap">
+    <h2>ข้อมูลค่าที่วัดได้</h2>
+    <div class="mgrid">
+      <div class="slider">
+        <div class="track" id="track">
+          <!-- ใส่รูปแทนช่องว่าง: <div class="slide"><img referrerpolicy="no-referrer" src="ลิงก์รูป" alt="คำอธิบาย"></div> -->
+          <div class="slide"><span>พื้นที่สำหรับรูปที่ 1<br>(รอถ่ายรูป)</span></div>
+          <div class="slide"><span>พื้นที่สำหรับรูปที่ 2<br>(รอถ่ายรูป)</span></div>
+        </div>
+        <button class="sbtn prev" aria-label="รูปก่อนหน้า">‹</button>
+        <button class="sbtn next" aria-label="รูปถัดไป">›</button>
+        <div class="dots" id="dots"></div>
+      </div>
+      <ul class="mlist">
+        <!-- เติมข้อมูลการวัดผลที่นี่ -->
+        <li>รอเติมข้อมูล</li>
+        <li>รอเติมข้อมูล</li>
+        <li>รอเติมข้อมูล</li>
+        <li>รอเติมข้อมูล</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 5. ติดต่อสอบถาม -->
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <h3>ติดต่อสอบถาม</h3>
+    <p><b style="font-weight:500;color:var(--ink)">บริษัท สปอร์ต ซินโนโลยี จำกัด</b><br>
+    1010/41, 1010/43 หมู่ที่ 3 ตำบลเทพารักษ์ อำเภอเมืองสมุทรปราการ จ.สมุทรปราการ 10270</p>
+    <a class="tel" href="tel:0816990009">โทรศัพท์: 081 699 0009</a>
+  </div>
+</footer>
+
 <dialog id="lb" aria-label="ภาพขยาย"><img alt=""></dialog>
 
 <script>
-/* วางลิงก์แชร์ Google Drive (สิทธิ์ "ทุกคนที่มีลิงก์") เช่น https://drive.google.com/file/d/xxxx/view */
+/* วางลิงก์แชร์คลิปจาก Google Drive (สิทธิ์ "ทุกคนที่มีลิงก์") */
 const VIDEO_URL = "";
 const box = document.getElementById("videoBox");
 const m = VIDEO_URL.match(/\/d\/([\w-]+)/) || VIDEO_URL.match(/[?&]id=([\w-]+)/);
@@ -197,28 +176,32 @@ box.innerHTML = m
   ? '<iframe src="https://drive.google.com/file/d/'+m[1]+'/preview" title="คลิปแนะนำ BA900S" allow="autoplay; fullscreen" allowfullscreen></iframe>'
   : '<p><strong>ยังไม่มีคลิป</strong>วางลิงก์ Google Drive ที่ตัวแปร VIDEO_URL ในไฟล์ index.html</p>';
 
-/* scroll story: สลับภาพตามหัวข้อที่อยู่กลางจอ */
-const stageImgs = {full:document.querySelector(".stage .full"),head:document.querySelector(".stage .head"),screen:document.querySelector(".stage .screen")};
-const num = document.querySelector(".stage .num"), glow = document.querySelector(".stage .glow");
-const pos = {head:["-30vw","-20vh"],screen:["-20vw","10vh"],full:["0","0"]};
-function show(key, n){
-  for (const k in stageImgs) stageImgs[k].classList.toggle("on", k === key);
-  num.classList.toggle("on", !!n);
-  const p = pos[key]; glow.style.transform = "translate("+p[0]+","+p[1]+")";
-}
-const io = new IntersectionObserver(es => es.forEach(e => {
-  if (e.isIntersecting) show(e.target.dataset.show, e.target.dataset.num);
-}), {rootMargin:"-45% 0px -45% 0px"});
-document.querySelectorAll(".chap").forEach(c => io.observe(c));
-
-/* ภาพขยาย + แกลเลอรี่ */
+/* กล่องรูปสินค้า 4 กล่อง */
+const pics = [
+  ["1NiNwn-VASX88nodoStuUCqpJvuosSi3u","รูปสินค้า 1"],
+  ["13GJZdGnqXy0nxf-yzt7s8Yczo9xdOLso","รูปสินค้า 2"],
+  ["1UIbORAM5SyvRqVpGwe64Bj19isKO6Yda","รูปสินค้า 3"],
+  ["1ibTtesesTXzv0Jq339Hilc2cDBjdDc_V","รูปสินค้า 4"]
+];
+const src = (id,w) => "https://drive.google.com/thumbnail?id="+id+"&sz=w"+w;
 const lb = document.getElementById("lb"), lbi = lb.querySelector("img");
-const open = (s,a) => { lbi.src = s; lbi.alt = a||""; lb.showModal(); };
-[["hero.jpg","ภาพหลัก BA900S"],["ultrasonic.jpg","เซนเซอร์ Ultrasonic"],["screen.jpg","หน้าจอ IPS 19 นิ้ว"],["weight.jpg","รับน้ำหนัก 200 kg"],["size.jpg","ขนาดสินค้า"]]
-.forEach(([f,a]) => { const b=document.createElement("button"); b.setAttribute("aria-label","ขยายรูป: "+a);
-  b.innerHTML='<img loading="lazy" src="assets/images/'+f+'" alt="'+a+'">'; b.onclick=()=>open("assets/images/"+f,a); document.getElementById("grid").appendChild(b); });
-document.querySelectorAll("[data-zoom]").forEach(i => i.onclick = () => open(i.src,i.alt));
+pics.forEach(([id,a]) => {
+  const b = document.createElement("button");
+  b.setAttribute("aria-label","ขยายรูป: "+a);
+  b.innerHTML = '<img referrerpolicy="no-referrer" loading="lazy" src="'+src(id,1000)+'" alt="'+a+'">';
+  b.onclick = () => { lbi.referrerPolicy = "no-referrer"; lbi.src = src(id,2000); lbi.alt = a; lb.showModal(); };
+  document.getElementById("boxes").appendChild(b);
+});
 lb.onclick = () => lb.close();
+
+/* สไลด์ */
+const track = document.getElementById("track"), n = track.children.length, dots = document.getElementById("dots");
+for (let i=0;i<n;i++) dots.appendChild(document.createElement("i"));
+const go = d => track.scrollBy({left:d*track.clientWidth, behavior:"smooth"});
+document.querySelector(".prev").onclick = () => go(-1);
+document.querySelector(".next").onclick = () => go(1);
+const mark = () => { const k = Math.round(track.scrollLeft/track.clientWidth); [...dots.children].forEach((d,i)=>d.classList.toggle("on",i===k)); };
+track.addEventListener("scroll", mark); mark();
 </script>
 </body>
 </html>
