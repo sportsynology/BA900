@@ -64,6 +64,11 @@ td{font-weight:400}
 .mlist li{position:relative;padding:14px 0 14px 28px;border-bottom:1px solid var(--line);color:var(--mute)}
 .mlist li::before{content:"";position:absolute;left:4px;top:25px;width:9px;height:9px;border-radius:50%;background:var(--cy)}
 
+
+/* ตัวอย่างรายงานผล */
+.report .paper{display:block;max-width:820px;margin:32px auto 0;border-radius:14px;overflow:hidden;background:#fff;border:1px solid var(--line);cursor:zoom-in}
+.report .paper img{width:100%;height:auto}
+.report .hint{text-align:center;color:var(--mute);font-size:.92rem;margin-top:14px}
 /* 5 contact */
 .contact{background:var(--panel);border-top:1px solid var(--line);padding:72px 0}
 .contact h3{font-size:1.5rem;font-weight:600;margin-bottom:10px}
@@ -111,9 +116,9 @@ dialog img{max-height:90vh;margin:auto;border-radius:12px}
         <tr><th>ขนาด</th><td>สูง 240 × กว้าง 43 × ลึก 61 cm</td></tr>
         <tr><th>รับน้ำหนัก</th><td>สูงสุด 200 kg</td></tr>
         <tr><th>วัดส่วนสูง</th><td>Ultrasonic Sensor</td></tr>
-        <tr><th>หน้าจอ</th><td>IPS HD สัมผัส 19 นิ้ว </td></tr>
+        <tr><th>หน้าจอ</th><td>IPS HD สัมผัส 19 นิ้ว</td></tr>
         <tr><th>ภาษา</th><td>ไทย/อังกฤษ</td></tr>
-        <tr><th>วัดชีพจร</th><td>แถบสัมผัสที่มือจับและที่แท่นเหยียบ</td></tr>
+        <tr><th>วัดชีพจร</th><td>แถบสัมผัสที่มือจับและแท่นเหยียบ</td></tr>
         <tr><th>รับประกัน</th><td>ตัวเครื่อง 1 ปีเต็ม พร้อมบริการหลังการขาย</td></tr>
       </table>
       <div class="boxes" id="boxes"></div>
@@ -138,8 +143,8 @@ dialog img{max-height:90vh;margin:auto;border-radius:12px}
       <div class="slider">
         <div class="track" id="track">
           <!-- ใส่รูปแทนช่องว่าง: <div class="slide"><img referrerpolicy="no-referrer" src="ลิงก์รูป" alt="คำอธิบาย"></div> -->
-          <div class="slide"><img referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/d/19XoF2eKz_XWEi_8OeuqDG38AypTiNx0T=w2000" alt="ค่าที่วัดได้ รูปที่ 1"></div>
-          <div class="slide"><img referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/d/1XL3P9P5cIyNK1P0X_9nXLxqetnbg8V4y=w2000" alt="ค่าที่วัดได้ รูปที่ 2"></div>
+          <div class="slide"><img referrerpolicy="no-referrer" src="https://drive.google.com/thumbnail?id=12dimgcBm3SDCEJzCuuep6zOcE9Az3oC6&sz=w2000" alt="ค่าที่วัดได้ รูปที่ 1"></div>
+          <div class="slide"><img referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/d/17PQBfILO4j9kTb_a846TLBs1sLooqfMR=w2000" alt="ค่าที่วัดได้ รูปที่ 2"></div>
         </div>
         <button class="sbtn prev" aria-label="รูปก่อนหน้า">‹</button>
         <button class="sbtn next" aria-label="รูปถัดไป">›</button>
@@ -147,17 +152,24 @@ dialog img{max-height:90vh;margin:auto;border-radius:12px}
       </div>
       <ul class="mlist">
         <!-- เติมข้อมูลการวัดผลที่นี่ -->
-        <li>วิเคราะห์องค์ประกอบร่างกาย</li>
-        <li>การวิเคราะห์โรคอ้วน</li>
-        <li>การวิเคราะห์ไขมันตามส่วนต่างๆ</li>
-        <li>การวิเคราะห์กล้ามเนื้อ</li>
-        <li>การให้คะแนนรวมร่างกาย</li>
-        <li>การควบคุมน้ำหนัก</li>
-        <li>บ่งชี้ประเภทร่างกาย</li>
-        <li>การวิเคราะห์อิมพีแดนซ์</li>
-        <li>ตัวชี้วัดอื่นๆ</li>
+        <li>รอเติมข้อมูล</li>
+        <li>รอเติมข้อมูล</li>
+        <li>รอเติมข้อมูล</li>
+        <li>รอเติมข้อมูล</li>
       </ul>
     </div>
+  </div>
+</section>
+
+<!-- ตัวอย่างรายงานผลการวัด -->
+<section class="report" id="report" style="background:var(--panel)">
+  <div class="wrap">
+    <h2>ตัวอย่างรายงานผลการวัด</h2>
+    <p class="lead">รายงานการวิเคราะห์องค์ประกอบของร่างกายที่ได้จากเครื่อง BA900S</p>
+    <a class="paper" href="report-full.jpg" target="_blank" rel="noopener" aria-label="เปิดรายงานขนาดเต็ม">
+      <img src="report.jpg" alt="ตัวอย่างรายงานการวิเคราะห์องค์ประกอบของร่างกายจากเครื่อง BA900S" loading="lazy">
+    </a>
+    <p class="hint">แตะที่ภาพเพื่อเปิดดูขนาดเต็ม</p>
   </div>
 </section>
 
