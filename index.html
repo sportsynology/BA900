@@ -24,7 +24,7 @@ section{padding:96px 0}
 
 /* 1 hero */
 .hero{min-height:100svh;padding:0;position:relative;display:flex;align-items:center;overflow:hidden;background:radial-gradient(55% 60% at 75% 55%,#1b1f6a 0%,transparent 70%)}
-.hero .logo{position:absolute;top:22px;right:28px;height:46px;width:auto;z-index:2}
+.hero .logo{position:absolute;top:22px;left:28px;height:46px;width:auto;z-index:2;filter:brightness(0) invert(1)}
 .hero .wrap{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:24px;width:100%}
 .hero h1{font-size:clamp(3.6rem,12vw,8.5rem);font-weight:700;letter-spacing:-.03em;line-height:1}
 .hero p{font-size:clamp(1.1rem,2.6vw,1.8rem);color:var(--cy);font-weight:400;margin-top:8px}
@@ -78,7 +78,7 @@ dialog img{max-height:90vh;margin:auto;border-radius:12px}
   section{padding:64px 0}
   .hero{align-items:flex-start;padding-top:84px}
   .hero .wrap{grid-template-columns:1fr;gap:0}
-  .hero .logo{height:36px;right:18px;top:18px}
+  .hero .logo{height:36px;left:18px;top:18px}
   .hero .prod img{height:56svh}
   .sgrid,.mgrid{grid-template-columns:1fr;gap:32px}
 }
@@ -168,13 +168,16 @@ dialog img{max-height:90vh;margin:auto;border-radius:12px}
 <dialog id="lb" aria-label="ภาพขยาย"><img alt=""></dialog>
 
 <script>
-/* วางลิงก์แชร์คลิปจาก Google Drive (สิทธิ์ "ทุกคนที่มีลิงก์") */
+/* วางลิงก์คลิป YouTube หรือ Google Drive (Drive ต้องตั้งสิทธิ์ "ทุกคนที่มีลิงก์") */
 const VIDEO_URL = "https://www.youtube.com/watch?v=zR_2_4A05R0";
 const box = document.getElementById("videoBox");
-const m = VIDEO_URL.match(/\/d\/([\w-]+)/) || VIDEO_URL.match(/[?&]id=([\w-]+)/);
-box.innerHTML = m
-  ? '<iframe src="https://drive.google.com/file/d/'+m[1]+'/preview" title="คลิปแนะนำ BA900S" allow="autoplay; fullscreen" allowfullscreen></iframe>'
-  : '<p><strong>ยังไม่มีคลิป</strong>วางลิงก์ Google Drive ที่ตัวแปร VIDEO_URL ในไฟล์ index.html</p>';
+const yt = VIDEO_URL.match(/(?:youtu\.be\/|[?&]v=|\/embed\/|\/shorts\/)([\w-]{11})/);
+const gd = VIDEO_URL.match(/\/d\/([\w-]+)/) || VIDEO_URL.match(/[?&]id=([\w-]+)/);
+const vsrc = yt ? "https://www.youtube-nocookie.com/embed/"+yt[1]+"?rel=0"
+           : gd ? "https://drive.google.com/file/d/"+gd[1]+"/preview" : "";
+box.innerHTML = vsrc
+  ? '<iframe src="'+vsrc+'" title="คลิปแนะนำ BA900S" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>'
+  : '<p><strong>ยังไม่มีคลิป</strong>วางลิงก์ที่ตัวแปร VIDEO_URL ในไฟล์ index.html</p>';
 
 /* กล่องรูปสินค้า 4 กล่อง */
 const pics = [
