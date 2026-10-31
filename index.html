@@ -75,7 +75,23 @@ td{font-weight:400}
 .report .paper{display:block;max-width:820px;margin:32px auto 0;border-radius:14px;overflow:hidden;background:#fff;border:1px solid var(--line);cursor:zoom-in}
 .report .paper img{width:100%;height:auto}
 .report .hint{text-align:center;color:var(--mute);font-size:.92rem;margin-top:14px}
-/* 5 contact */
+
+/* 5 FAQ */
+.faq{background:var(--panel);border-top:1px solid var(--line)}
+.faq .wrap{max-width:860px}
+.faq .list{margin-top:32px;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;position:relative;display:flex;gap:14px;padding:20px 48px 20px 0;font-weight:500;transition:color .2s}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:6px;top:50%;translate:0 -50%;font-size:1.7rem;line-height:1;color:var(--cy);transition:rotate .25s}
+.faq summary:hover{color:var(--cy)}
+.faq details[open] summary::after{rotate:45deg}
+.faq .q{color:var(--cy);font-weight:600;flex:none}
+.faq .a{display:flex;gap:14px;padding:0 48px 24px 0;color:var(--mute)}
+.faq .a b{color:var(--mute);font-weight:600;flex:none}
+.faq .a span{color:var(--mute)}
+
+/* 6 contact */
 .contact{background:var(--panel);border-top:1px solid var(--line);padding:72px 0}
 .contact h3{font-size:1.5rem;font-weight:600;margin-bottom:10px}
 .contact p{color:var(--mute);max-width:56ch}
@@ -92,6 +108,8 @@ dialog img{max-height:90vh;margin:auto;border-radius:12px}
   .hero .logo{height:36px;left:18px;top:18px}
   .hero .prod img{height:56svh}
   .sgrid,.mgrid{grid-template-columns:1fr;gap:32px}
+  .faq summary{padding-right:40px}
+  .faq .a{padding-right:8px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 </style>
@@ -181,7 +199,64 @@ dialog img{max-height:90vh;margin:auto;border-radius:12px}
     </div>
   </div>
 </section>
-<!-- 5. ติดต่อสอบถาม -->
+
+<!-- 5. คำถามที่พบบ่อย Q&A -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <h2>คำถามที่พบบ่อย Q&amp;A</h2>
+    <p class="lead">คำตอบสำหรับข้อสงสัยที่พบบ่อยเกี่ยวกับการใช้งาน BA900S</p>
+    <div class="list">
+
+      <details>
+        <summary><span class="q">Q</span><span>เครื่อง BA900S ทำงานอย่างไร และต่างจากเครื่องชั่งน้ำหนักทั่วไปอย่างไร?</span></summary>
+        <div class="a"><b>A</b><span>BA900S ใช้เทคโนโลยีนำส่งกระแสไฟฟ้าความถี่หลายช่วงผ่านร่างกาย เนื่องจากกล้ามเนื้อมีน้ำสูงจึงนำไฟฟ้าได้ดี ส่วนไขมันเป็นฉนวนต้านไฟฟ้า ทำให้เครื่องแยกคำนวณมวลไขมัน กล้ามเนื้อ และน้ำได้อย่างแม่นยำ ต่างจากเครื่องทั่วไปที่วัดได้แค่น้ำหนัก</span></div>
+      </details>
+
+      <details>
+        <summary><span class="q">Q</span><span>จะรู้สึกถึงกระแสไฟฟ้าขณะชั่งหรือไม่?</span></summary>
+        <div class="a"><b>A</b><span>กระแสไฟฟ้าที่ปล่อยผ่านร่างกายเป็นกระแสไฟฟ้าความถี่สูงระดับต่ำมาก ปลอดภัย ไม่มีความเจ็บปวด และคนส่วนใหญ่จะไม่รู้สึกอะไรเลย</span></div>
+      </details>
+
+      <details>
+        <summary><span class="q">Q</span><span>BA900S แม่นยำกว่าเครื่องอื่นๆ อย่างไร?</span></summary>
+        <div class="a"><b>A</b><span>BA900S ใช้การวัดแยกส่วนร่างกาย อิเล็กโทรด 8 จุดสัมผัส และไม่ใช้สูตรประเมินเชิงสถิติ (No Empirical Estimation) เช่น เพศ หรืออายุ มาปรับแต่งค่าความต้านทานไฟฟ้า</span></div>
+      </details>
+
+      <details>
+        <summary><span class="q">Q</span><span>สามารถทำการตรวจได้บ่อยแค่ไหน?</span></summary>
+        <div class="a"><b>A</b><span>แนะนำให้ตรวจทุก 4-6 สัปดาห์ เพื่อติดตามการเปลี่ยนแปลงขององค์ประกอบร่างกายและมวลกล้ามเนื้อได้อย่างเห็นผลชัดเจน</span></div>
+      </details>
+
+      <details>
+        <summary><span class="q">Q</span><span>ปัจจัยใดบ้างที่ทำให้ผลการวัดเปลี่ยนไปหรือคลาดเคลื่อน?</span></summary>
+        <div class="a"><b>A</b><span>ปริมาณน้ำในร่างกาย (ภาวะขาดน้ำ/ดื่มน้ำมากเกินไป), ช่วงเวลาของวันที่ตรวจ, การรับประทานอาหารก่อนตรวจ, การออกกำลังกายหนัก และรอบเดือนในผู้หญิง</span></div>
+      </details>
+
+      <details>
+        <summary><span class="q">Q</span><span>ใครบ้างที่ไม่ควรตรวจหรือต้องระวังเป็นพิเศษ?</span></summary>
+        <div class="a"><b>A</b><span>ผู้ที่ติดเครื่องกระตุ้นหัวใจ (Pacemaker) หรืออุปกรณ์อิเล็กทรอนิกส์ฝังในร่างกาย ห้ามใช้งานเด็ดขาด เนื่องจากกระแสไฟฟ้าอาจรบกวนการทำงานของอุปกรณ์ สำหรับสตรีมีครรภ์แม้อาจไม่เป็นอันตรายรุนแรง แต่ไม่แนะนำให้ตรวจเพราะค่าระดับน้ำในร่างกายที่เปลี่ยนแปลงจะทำให้ผลคลาดเคลื่อน</span></div>
+      </details>
+
+      <details>
+        <summary><span class="q">Q</span><span>เครื่อง BA900S ต้องทำการปรับเทียบ (Calibration) บ่อยแค่ไหน?</span></summary>
+        <div class="a"><b>A</b><span>ควรทำการปรับเทียบทุกๆ 3 เดือน</span></div>
+      </details>
+
+      <details>
+        <summary><span class="q">Q</span><span>ถ้าน้ำหนักบนหน้าจอแสดงค่าผิดพลาด ต้องแก้ไขอย่างไร?</span></summary>
+        <div class="a"><b>A</b><span>ให้ปิดเครื่องและเปิดใหม่ โดยห้ามยืน กด หรือวางสิ่งของใดๆ บนฐานชั่งน้ำหนักขณะเครื่องกำลังวอร์มอัป (Warm-up) และตรวจสอบเมนู SETUP ว่ามีการตั้งค่าปรับค่าน้ำหนักไว้หรือไม่</span></div>
+      </details>
+
+      <details>
+        <summary><span class="q">Q</span><span>ทำความสะอาดตัวเครื่องอย่างไรไม่ให้เสียหาย?</span></summary>
+        <div class="a"><b>A</b><span>เช็ดทำความสะอาดด้วยกระดาษชำระเฉพาะ หรือผ้านุ่มชุบน้ำหมาดๆ ห้ามพ่นน้ำหรือของเหลวลงบนเครื่องโดยตรง และห้ามใช้น้ำยาทำความสะอาดที่มีส่วนผสมของกรด เพราะจะกัดกร่อนพื้นผิวและทำให้สีตก</span></div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- 6. ติดต่อสอบถาม -->
 <footer class="contact" id="contact">
   <div class="wrap">
     <h3>ติดต่อสอบถาม</h3>
